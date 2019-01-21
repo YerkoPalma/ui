@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@yerkopalma/ui",
   "description": "> Personal collection of ui components",
   "version": "1.0.0",
   "main": "index.js",

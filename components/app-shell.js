@@ -23,7 +23,7 @@ export default class AppShell extends LitElement {
         if (this.default) {
           this.fetchTemplate(this.default).then(result => { this.current = result })
         } else {
-          this.current = html`<div></div>`
+          this.current = html`<div><slot></slot></div>`
         }
       }
     }
