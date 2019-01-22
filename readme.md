@@ -29,10 +29,12 @@ if you need to loadn only some specific component
 - flipper-card
 - i18n-toggle
 - i18n-content
-- md-view
+- [md-view](#md-view)
 - grid-menu
 
 ### app-shell
+
+Custom element to manage dynamic content of your app
 
 #### Usage
 
@@ -57,3 +59,42 @@ is `fetch`ed) or markdown file.
 html file which will be rendered when a link inside the 
 controller is not found. Decision order when navigation happens is
 link href > default attribute > element content
+
+### md-view
+
+Custom element for rendering markdown
+
+#### Usage
+
+There are two ways to use this component.
+
+By setting markdown content to the element
+
+```html
+<md-view>
+  # some md content
+
+  **Cool**, right?
+</md-view>
+```
+
+or referencing an accesible markdown file
+
+```html
+<md-view src="readme.md">
+</md-view>
+```
+
+Notice that you can set both, so if the file can't be reached, the 
+inner content will be rendered
+
+```html
+<md-view src="remote-file.md">
+  **Sorry!** we couldn't fetch your _remote file_
+</md-view>
+```
+
+#### Attributes
+
+- src: A string with the path to a remote markdown file, if not provided or
+not found, inner content will be rendered
