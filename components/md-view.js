@@ -15,7 +15,7 @@ export default class MdView extends LitElement {
   }
   constructor () {
     super()
-    this.content = html`<div><slot></slot></div>`
+    this.content = html([markdown(this.textContent)])
   }
   render () {
     return this.content
@@ -23,8 +23,8 @@ export default class MdView extends LitElement {
   firstUpdated (changedProperties) {
     for (let key of changedProperties.keys()) {
       if (key === 'src') {
-        if (this.default) {
-          this.fetchMarkdown(this.default).then(result => { this.content = result })
+        if (this.src) {
+          this.fetchMarkdown(this.src).then(result => { this.content = result })
         }
       }
     }
@@ -49,7 +49,7 @@ export default class MdView extends LitElement {
         }
       </style>
       <div>
-        ${html([markdown(response)])}
+        ${html([markdown(result)])}
       </div>
       `
   }
