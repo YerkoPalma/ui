@@ -12,18 +12,20 @@ export default class AppShell extends LitElement {
       default: {
         type: String
       },
-      current: {
+      content: {
         type: Object
       }
     }
+  }
+  constructor () {
+    super()
+    this.content = html`<div><slot></slot></div>`
   }
   firstUpdated (changedProperties) {
     for (let key of changedProperties.keys()) {
       if (key === 'default') {
         if (this.default) {
-          this.fetchTemplate(this.default).then(result => { this.current = result })
-        } else {
-          this.current = html`<div><slot></slot></div>`
+          this.fetchTemplate(this.default).then(result => { this.content = result })
         }
       }
     }
@@ -37,7 +39,7 @@ export default class AppShell extends LitElement {
           link.addEventListener('click', async e => {
             e.preventDefault()
             const target = e.target.href
-            this.current = await this.fetchTemplate(target)
+            this.content = await this.fetchTemplate(target)
             window.history.pushState({}, null, target)
           })
         })
@@ -45,7 +47,7 @@ export default class AppShell extends LitElement {
     }
   }
   render () {
-    return this.current
+    return this.content
   }
   async fetchTemplate (template) {
     const NOT_FOUND_URL = 'content/404.html'
