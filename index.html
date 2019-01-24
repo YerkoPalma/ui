@@ -7,18 +7,10 @@
     <title>blog</title>
   </head>
   <body>
-    <noscript>Please enable JavaScript.</noscript>
-    <aside class="absolute vh-100 bg-white w-20" id="nav">
-      <ul class="list pa0">
-        <li><a class="link black w-100 bg-animate db pa3 sans-serif hover-bg-near-white pointer" href="readme.md">About</a></li>
-      </ul>
-    </aside>
-    <main>
-<md-view>
-  ## Hello _world_
-</md-view>
-      <md-view src="readme.md"></md-view>
-    </main>
+      <flipper-card shape="square">
+        <p slot="front" style="background-color: coral">I'm in front</p>
+        <p slot="back" style="background-color: hotpink">I'm in back</p>
+      </flipper-card>
     <script async type="module" src="index.js"></script>
   </body>
 </html>
