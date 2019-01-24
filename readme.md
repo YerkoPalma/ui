@@ -27,7 +27,7 @@ if you need to loadn only some specific component
 
 - [app-shell](#app-shell)
 - flipper-card
-- i18n-toggle
+- [i18n-toggle](#i18n-toggle)
 - i18n-content
 - [md-view](#md-view)
 - grid-menu
@@ -98,3 +98,64 @@ inner content will be rendered
 
 - src: A string with the path to a remote markdown file, if not provided or
 not found, inner content will be rendered
+
+### i18n-content
+
+Manage i18n content
+
+#### Usage
+
+Minimal usage is quite minimal
+
+```html
+<i18n-content>
+  Hola mundo
+</i18n-content>
+```
+
+This, by default won't do anything. There are two ways to translate the content
+
+```json
+{
+  "en-US": {
+    "greeting": "hello world"
+  },
+  "es-ES": {
+    "greeting": "hola mundo"
+  }
+}
+```
+
+```js
+// set global config
+i18nContent.setSource('mainSourceFile.json')
+
+// translate from the browser lang to en-US
+i18nContent.setLang('en-US')
+
+// or set all at once
+i18nContent.setConfig({
+  source: 'mainSourceFile.json',
+  lang: 'en-US'
+})
+```
+
+```html
+<i18n-content tag="greeting">
+</i18n-content>
+```
+
+This is the main way to do translations, through a json (or yaml) file. 
+You need to mandatory set the static property of the source file, through 
+the `setSource()` method. Other properties, like the lang will be set with 
+default values, or local values through attributes.
+
+Another way for translating is to set a trasnlator function, if this is 
+set, it will be called for every component instance that hasn't a `tag` 
+attribute set.
+
+```js
+i18nContent.setTranslator((text, from, to) => {
+  // translate function against third party service/lib
+})
+```
