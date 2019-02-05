@@ -3,9 +3,6 @@ import { LitElement, html } from 'https://unpkg.com/@polymer/lit-element?module'
 export default class FlipperCard extends LitElement {
   static get properties () {
     return {
-      shape: {
-        type: String
-      },
       width: {
         type: String
       },

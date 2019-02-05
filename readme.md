@@ -26,11 +26,11 @@ if you need to loadn only some specific component
 ## Components
 
 - [app-shell](#app-shell)
-- flipper-card
+- [flipper-card](#flipper-card)
 - [i18n-toggle](#i18n-toggle)
-- i18n-content
+- [i18n-content](#i18n-content)
 - [md-view](#md-view)
-- grid-menu
+- [grid-menu](#grid-menu)
 
 ### app-shell
 
@@ -176,3 +176,33 @@ Simple do
 ```
 
 The slots can be any element.
+
+### grid-menu
+
+Generate a grid menu from a bunch of links
+
+#### Usage
+
+```html
+<grid-menu>
+  <a href="1.html">1</a>
+  <a href="2.html">2</a>
+  <a href="3.html">3</a>
+  <a href="4.html">4</a>
+  <a href="5.html">5</a>
+</grid-menu>
+```
+
+Each children of the element will become a tile in the grid menu.
+By default, tiles are squared, but you can choose to make them 
+random sized using a `random` attribute
+
+```html
+<grid-menu random>
+  <a href="1.html">1</a>
+  <a href="2.html">2</a>
+  <a href="3.html">3</a>
+  <a href="4.html">4</a>
+  <a href="5.html">5</a>
+</grid-menu>
+```
