@@ -7,10 +7,17 @@
     <title>blog</title>
   </head>
   <body>
-      <flipper-card shape="square">
-        <p slot="front" style="background-color: coral">I'm in front</p>
-        <p slot="back" style="background-color: hotpink">I'm in back</p>
-      </flipper-card>
+      <md-view custom-elements="flipper-card">
+# Hello
+## world
+
+<flipper-card>
+  <p slot="front">I'm in front</p>
+  <p slot="back">I'm in back</p>
+</flipper-card>
+
+**foo** _bar_
+      </md-view>
     <script async type="module" src="index.js"></script>
   </body>
 </html>
