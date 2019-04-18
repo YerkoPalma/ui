@@ -7,17 +7,14 @@
     <title>blog</title>
   </head>
   <body>
-      <md-view custom-elements="flipper-card">
-# Hello
-## world
-
-<flipper-card>
-  <p slot="front">I'm in front</p>
-  <p slot="back">I'm in back</p>
-</flipper-card>
-
-**foo** _bar_
-      </md-view>
+    <div class="menu">
+      <a href="home.html">Home</a>
+      <a href="about.md">About</a>
+      <a href="gallery">Gallery</a>
+    </div>
+    <fs-router>
+      This is the default page, try going to some of the links above
+    </fs-router>
     <script async type="module" src="index.js"></script>
   </body>
 </html>
