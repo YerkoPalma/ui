@@ -44,18 +44,29 @@ export default class FsRouter extends LitElement {
         } else {
           response = await fetch(`${window.location.pathname}.md`)
           if (response && response.ok) {
-            // we found an html file
+            // we found an md file
             result = await response.text()
             return html([md(result)])
           } else {
             // if we are here then we need to add an index file to the path
             // first try html
-            
+            response = await fetch(`${window.location.pathname}/index.html`)
+            // we found index.html
+            if (response && response.ok) {
+              result = await response.text()
+              return html([result])
+            } else {
+              // last chance, go for index.md
+              response = await fetch(`${window.location.pathname}/index.md`)
+              if (response && response.ok) {
+                result = await response.text()
+                return html([md(result)])
+              }
+            }
           }
         }
       }
     } catch (e) {
-      
     }
   }
   render () {
