@@ -1,4 +1,5 @@
-import { LitElement, html } from 'https://unpkg.com/@polymer/lit-element?module'
+/* global customElements */
+import { LitElement, html } from 'https://unpkg.com/lit-element?module'
 
 export default class FlipperCard extends LitElement {
   static get properties () {

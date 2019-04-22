@@ -1,6 +1,6 @@
 /* global fetch customElements */
 import { CustomLexer, Parser, Renderer } from '../lib/markdown.js'
-import { LitElement, html } from 'https://unpkg.com/@polymer/lit-element?module'
+import { LitElement, html } from 'https://unpkg.com/lit-element?module'
 
 let md
 

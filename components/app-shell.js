@@ -1,6 +1,6 @@
-/* global fetch */
+/* global fetch customElements */
 import markdown from 'https://unpkg.com/md?module'
-import { LitElement, html } from 'https://unpkg.com/@polymer/lit-element?module'
+import { LitElement, html } from 'https://unpkg.com/lit-element?module'
 
 // export
 export default class AppShell extends LitElement {

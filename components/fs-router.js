@@ -1,5 +1,5 @@
 /* global fetch customElements */
-import { LitElement, html } from 'https://unpkg.com/@polymer/lit-element?module'
+import { LitElement, html } from 'https://unpkg.com/lit-element?module'
 import { md } from '../lib/markdown.js'
 
 export default class FsRouter extends LitElement {
