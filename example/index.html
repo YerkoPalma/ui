@@ -8,13 +8,15 @@
   </head>
   <body>
     <div class="menu">
-      <a href="home.html">Home</a>
-      <a href="about.md">About</a>
-      <a href="gallery">Gallery</a>
+      <a href="/example">Test</a>
+      <a href="/example/home.html">Home</a>
+      <a href="/example/about.md">About</a>
+      <a href="/example/gallery">Gallery</a>
+      <a href="/example/notfound">Not found</a>
     </div>
-    <fs-router>
+    <fs-router default-page="/example/default.html">
       This is the default page, try going to some of the links above
     </fs-router>
-    <script async type="module" src="index.js"></script>
+    <script async type="module" src="../index.js"></script>
   </body>
 </html>
