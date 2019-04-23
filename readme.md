@@ -11,8 +11,8 @@ $ npm install @yerkopalma/ui
 or use the tags
 
 ```html
-<script type="module" src="https://unpkg/@yerkopalma/ui?module"></script>
-<script nomodule src="https://unpkg/@yerkopalma/ui"></script>
+<script type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
+<script nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
 ```
 
 if you need to load only some specific component

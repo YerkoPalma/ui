@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/YerkoPalma/ui/issues"
   },
-  "homepage": "https://github.com/YerkoPalma/ui#readme",
+  "homepage": "https://ui.yerkopalma.me",
   "dependencies": {
     "lit-element": "^2.0.0-rc.2",
     "md": "^0.6.0"
@@ -40,6 +40,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
+    "gh-pages": "^2.0.1",
     "tinyify": "^2.5.0"
   }
 }
