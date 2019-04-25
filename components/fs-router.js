@@ -8,6 +8,9 @@ export default class FsRouter extends LitElement {
       defaultPage: {
         type: String
       },
+      customStyle: {
+        type: String
+      },
       startPage: {
         type: String
       },
@@ -28,14 +31,19 @@ export default class FsRouter extends LitElement {
         this.content = result
       })
     })
-  }
-  firstUpdated (changedProperties) {
     // fetch default content
     for (let attribute of Array.from(this.attributes)) {
       if (attribute.name === 'default-page') {
         this.resolve(attribute.value).then(result => { this.defaultContent = result })
       }
+      if (attribute.name === 'custom-style' && attribute.value.split('.').slice(-1)[0] === 'css') {
+        fetch(attribute.value)
+          .then(response => response.text())
+          .then(text => { this.customStyle = text })
+      }
     }
+  }
+  firstUpdated (changedProperties) {
     let links = document.querySelectorAll('a[href]')
     Array.prototype.forEach.call(links, link => {
       link.addEventListener('click', ev => {
@@ -100,7 +108,11 @@ export default class FsRouter extends LitElement {
     return this.defaultContent
   }
   render () {
-    return this.content
+    return html`
+    <style>
+      ${this.customStyle}
+    </style>
+    ${this.content}`
   }
 }
 
