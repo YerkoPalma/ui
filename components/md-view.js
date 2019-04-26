@@ -1,8 +1,6 @@
 /* global fetch customElements */
-import { CustomLexer, Parser, Renderer } from '../lib/markdown.js'
+import { CustomLexer, Parser, Renderer, md } from '../lib/markdown.js'
 import { LitElement, html } from 'https://unpkg.com/lit-element?module'
-
-let md
 
 export default class MdView extends LitElement {
   static get properties () {

@@ -17,9 +17,18 @@
       </nav>
     </header>
     <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/docs/style.css" default-page="/docs/default.html">
-      This is the default page, try going to some of the links above
+      <h1 id="yerkopalmaui">@yerkopalma/ui</h1>
+      <blockquote><p>Personal collection of ui components</p></blockquote>
+      <h2 id="install">Install</h2>
+      <pre><code class="lang-bash">$ npm install @yerkopalma/ui</code></pre>
+      <p>or use the tags</p>
+      <pre><code class="lang-html">&lt;script type="module" src="https://unpkg.com/@yerkopalma/ui?module"&gt;&lt;/script&gt;
+&lt;script nomodule="" src="https://unpkg.com/@yerkopalma/ui"&gt;&lt;/script&gt;</code></pre>
+      <p>if you need to load only some specific component</p>
+      <pre><code class="lang-html">&lt;script type="module" src="https://unpkg/@yerkopalma/ui/app-shell.es.js"&gt;&lt;/script&gt;
+&lt;script nomodule="" src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"&gt;&lt;/script&gt;</code></pre>
     </fs-router>
     <script async type="module" src="../index.js"></script>
-    <script async nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
+    <script async nomodule src="../bundle.js"></script>
   </body>
 </html>

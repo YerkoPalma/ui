@@ -22,7 +22,7 @@ export default class FsRouter extends LitElement {
   constructor () {
     super()
     this.startPage = window.location.href
-    this.content = html([md(this.innerHTML)])
+    this.content = html([this.innerHTML])
     this.initialContent = this.content
     window.addEventListener('popstate', e => {
       e.preventDefault()

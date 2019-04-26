@@ -26,3 +26,21 @@ a. resolve the html file (from `gallery` to `gallery.html`)
 b. resolve the md file (from `gallery` to `gallery.md`)
 c. resolve an index.html or index.md file inside the folder (from `gallery` to 
 `gallery/index.html` or `gallery/index.md`)
+
+## Style
+
+Keep in mind that what you are loading is loaded in the shadowDOM,
+so, global styles wont affect your routes.
+If you are rendering html, simply put `style` tags with the proper css.
+
+```html
+<style>
+:host {
+  display: block;
+}
+:host([hidden]) {
+  display: none;
+}
+
+</style>
+```

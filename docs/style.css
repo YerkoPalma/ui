@@ -2,6 +2,7 @@
   display: block;
   margin-left: 20%;
   padding-left: 1.5rem;
+  padding-right: 1rem;
 }
 :host([hidden]) {
   display: none;
@@ -48,6 +49,19 @@
   border-radius: 2px;
   overflow-x: auto;
   max-width: 100%;
+}
+:host > *:last-child {
+  margin-bottom: 1rem;
+}
+:host blockquote {
+  margin: 0;
+}
+:host blockquote p {
+  padding: .5rem 1rem;
+  border-left-color: #999;
+  border-left-style: solid;
+  border-left-width: .5rem;
+  color: #777;
 }
 @media screen and (min-width: 30em) {
   :host p {
