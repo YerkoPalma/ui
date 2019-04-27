@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  margin-left: 20%;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+:host([hidden]) {
+  display: none;
+}
+:host h1 {
+  font-weight: 900;
+  line-height: 1.25;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  border-width: .25rem;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  font-size: 2.25rem;
+}
+:host h2 {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.25;
+}
+:host p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 34em;
+}
+:host ul {
+  margin: 0;
+}
+:host li {
+  padding-bottom: 1rem;
+  line-height: 1.25rem;
+}
+:host *:not(pre) > code {
+  padding: .25rem;
+  background-color: #777;
+  color: #eee;
+  border-radius: 2px;
+}
+:host pre {
+  margin: 0;
+  padding: .5rem;
+  background-color: #333;
+  color: #eee;
+  border-radius: 2px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+:host > *:last-child {
+  margin-bottom: 1rem;
+}
+:host blockquote {
+  margin: 0;
+}
+:host blockquote p {
+  padding: .5rem 1rem;
+  border-left-color: #999;
+  border-left-style: solid;
+  border-left-width: .5rem;
+  color: #777;
+}
+@media screen and (min-width: 30em) {
+  :host p {
+    /* margin-top: 0; */
+  }
+}

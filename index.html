@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="preload" as="style" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" onload="this.rel='stylesheet'" />
+  </head>
+  <body class="overflow-x-hidden">
+    <header class="z-999 helvetica bg-black-90 top-0 fixed w-20 h-100 ph3 pv3 pv4-ns ph3-m ph4-l">
+      <nav class="f6 fw6 ttu tracked">
+        <a class="link dim white db mr3 mv4" href="/docs/app-shell" title="App Shell">App Shell</a>
+        <a class="link dim white db mr3 mv4" href="/docs/flipper-card" title="Flipper card">Flipper card</a>
+        <a class="link dim white db mr3 mv4" href="/docs/md-view" title="Md View">Md View</a>
+        <a class="link dim white db mr3 mv4" href="/docs/fs-router" title="Fs Router">Fs Router</a>
+      </nav>
+    </header>
+    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/docs/style.css" default-page="/docs/default.html">
+      <h1 id="yerkopalmaui">@yerkopalma/ui</h1>
+      <blockquote><p>Personal collection of ui components</p></blockquote>
+      <h2 id="install">Install</h2>
+      <pre><code class="lang-bash">$ npm install @yerkopalma/ui</code></pre>
+      <p>or use the tags</p>
+      <pre><code class="lang-html">&lt;script type="module" src="https://unpkg.com/@yerkopalma/ui?module"&gt;&lt;/script&gt;
+&lt;script nomodule="" src="https://unpkg.com/@yerkopalma/ui"&gt;&lt;/script&gt;</code></pre>
+      <p>if you need to load only some specific component</p>
+      <pre><code class="lang-html">&lt;script type="module" src="https://unpkg/@yerkopalma/ui/app-shell.es.js"&gt;&lt;/script&gt;
+&lt;script nomodule="" src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"&gt;&lt;/script&gt;</code></pre>
+    </fs-router>
+    <script async type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
+    <script async nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
+  </body>
+</html>
