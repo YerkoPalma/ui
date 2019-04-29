@@ -22,7 +22,6 @@ if you need to load only some specific component
 <script nomodule src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"></script>
 ```
 
-
 ## Components
 
 - [app-shell](#app-shell)

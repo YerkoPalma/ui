@@ -1,6 +1,6 @@
 :host {
   display: block;
-  margin-left: 20%;
+  margin-left: 10%;
   padding-left: 1.5rem;
   padding-right: 1rem;
 }
@@ -61,10 +61,10 @@
   border-left-color: #999;
   border-left-style: solid;
   border-left-width: .5rem;
-  color: #777;
+  color: #565656;
 }
 @media screen and (min-width: 30em) {
-  :host p {
-    /* margin-top: 0; */
+  :host {
+    margin-left: 15%;
   }
 }
