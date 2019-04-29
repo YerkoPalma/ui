@@ -110,7 +110,7 @@ export default class FsRouter extends LitElement {
   render () {
     return html`
     <style>
-      ${this.customStyle}
+      ${this.customStyle ? this.customStyle : ''}
     </style>
     ${this.content}`
   }
