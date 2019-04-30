@@ -8,15 +8,13 @@
     <link rel="preload" as="style" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" onload="this.rel='stylesheet'" />
   </head>
   <body class="overflow-x-hidden">
-    <header class="z-999 helvetica bg-black-90 top-0 fixed w-20 h-100 ph3 pv3 pv4-ns ph3-m ph4-l">
-      <nav class="f6 fw6 ttu tracked">
-        <a class="link dim white db mr3 mv4" href="/app-shell" title="App Shell">App Shell</a>
-        <a class="link dim white db mr3 mv4" href="/flipper-card" title="Flipper card">Flipper card</a>
-        <a class="link dim white db mr3 mv4" href="/md-view" title="Md View">Md View</a>
-        <a class="link dim white db mr3 mv4" href="/fs-router" title="Fs Router">Fs Router</a>
-      </nav>
-    </header>
-    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/style.css" default-page="/default.html">
+    <side-nav custom-style="/side-nav.css">
+      <a href="/app-shell" title="App Shell">App Shell</a>
+      <a href="/flipper-card" title="Flipper card">Flipper card</a>
+      <a href="/md-view" title="Md View">Md View</a>
+      <a href="/fs-router" title="Fs Router">Fs Router</a>
+    </side-nav>
+    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/fs-router.css" default-page="/default.html">
       <h1 id="yerkopalmaui">@yerkopalma/ui</h1>
       <blockquote><p>Personal collection of ui components</p></blockquote>
       <h2 id="install">Install</h2>
@@ -28,7 +26,7 @@
       <pre><code class="lang-html">&lt;script type="module" src="https://unpkg/@yerkopalma/ui/app-shell.es.js"&gt;&lt;/script&gt;
 &lt;script nomodule="" src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"&gt;&lt;/script&gt;</code></pre>
     </fs-router>
-    <script async type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
-    <script async nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
+    <script type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
+    <script nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
   </body>
 </html>
