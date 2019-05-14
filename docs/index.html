@@ -8,25 +8,26 @@
     <link rel="preload" as="style" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" onload="this.rel='stylesheet'" />
   </head>
   <body class="overflow-x-hidden">
-    <side-nav custom-style="/side-nav.css">
-      <a href="/app-shell" title="App Shell">App Shell</a>
-      <a href="/flipper-card" title="Flipper card">Flipper card</a>
-      <a href="/md-view" title="Md View">Md View</a>
-      <a href="/fs-router" title="Fs Router">Fs Router</a>
+    <side-nav custom-style="/docs/side-nav.css">
+      <a href="/docs/app-shell" title="App Shell">App Shell</a>
+      <a href="/docs/flipper-card" title="Flipper card">Flipper card</a>
+      <a href="/docs/md-view" title="Md View">Md View</a>
+      <a href="/docs/fs-router" title="Fs Router">Fs Router</a>
     </side-nav>
-    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/fs-router.css" default-page="/default.html">
+    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/docs/fs-router.css" default-page="/default.html">
       <h1 id="yerkopalmaui">@yerkopalma/ui</h1>
       <blockquote><p>Personal collection of ui components</p></blockquote>
       <h2 id="install">Install</h2>
       <pre><code class="lang-bash">$ npm install @yerkopalma/ui</code></pre>
       <p>or use the tags</p>
+       
       <pre><code class="lang-html">&lt;script type="module" src="https://unpkg.com/@yerkopalma/ui?module"&gt;&lt;/script&gt;
 &lt;script nomodule="" src="https://unpkg.com/@yerkopalma/ui"&gt;&lt;/script&gt;</code></pre>
       <p>if you need to load only some specific component</p>
       <pre><code class="lang-html">&lt;script type="module" src="https://unpkg/@yerkopalma/ui/app-shell.es.js"&gt;&lt;/script&gt;
 &lt;script nomodule="" src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"&gt;&lt;/script&gt;</code></pre>
     </fs-router>
-    <script type="module" src="https://unpkg.com/@yerkopalma/ui?module"></script>
-    <script nomodule src="https://unpkg.com/@yerkopalma/ui"></script>
+    <script type="module" src="../src/index.js"></script>
+    <script nomodule src="../dist/index.js"></script>
   </body>
 </html>
