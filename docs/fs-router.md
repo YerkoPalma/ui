@@ -44,3 +44,7 @@ If you are rendering html, simply put `style` tags with the proper css.
 
 </style>
 ```
+
+Also you have the option of use the `custom-style` attribute, which loads a css 
+stylesheet for the shadow root of this element (so you can use the `:host` pseudo 
+element)
