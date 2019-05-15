@@ -21,7 +21,7 @@ export default class FsRouter extends LitElement {
   }
   constructor () {
     super()
-    this.startPage = window.location.href
+    this.startPage = window.location.href.replace(/(.*?)\/?$/, '$1')
     this.content = html([this.innerHTML])
     this.initialContent = this.content
     window.addEventListener('popstate', e => {
@@ -46,18 +46,25 @@ export default class FsRouter extends LitElement {
   firstUpdated (changedProperties) {
     let links = document.querySelectorAll('a[href]')
     Array.prototype.forEach.call(links, link => {
-      link.addEventListener('click', ev => {
-        ev.preventDefault()
-        this.resolve(link.href).then(result => {
-          this.content = result
-          window.history.pushState(undefined, link.href, link.href)
-        })
-      })
+      if (!link.target) {
+        // get link url
+        const url = new URL(link.href)
+        // only process local links
+        if (window.location.origin === url.origin) {
+          link.addEventListener('click', ev => {
+            ev.preventDefault()
+            this.resolve(link.href).then(result => {
+              this.content = result
+              window.history.pushState(undefined, link.href, link.href)
+            })
+          })
+        }
+      }
     })
   }
   async resolve (path) {
     path = path || window.location.href
-    if (path === this.startPage) return this.initialContent
+    if (path.replace(/(.*?)\/?$/, '$1') === this.startPage) return this.initialContent
     const isHtml = /\.html?$/i.test(path)
     const isMd = /\.(?:md|markdown)$/i.test(path)
     const maybeFolder = !isHtml && !isMd

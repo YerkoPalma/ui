@@ -25,11 +25,37 @@
   margin-bottom: 2rem;
 }
 
+::slotted(div.container) {
+  display: table;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  bottom: 5%;
+  left: 0;
+  height: 30px;
+}
+
+/*
+::slotted(div.container svg) {
+  margin: 1rem;
+}
+
+::slotted(div.container svg:first-child) {
+  float: left;
+}
+
+::slotted(div.container svg:last-child) {
+  float: right;
+}
+*/
 /* -ns */
 @media screen and (min-width: 30em) {
   :host aside {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+  ::slotted(div.container) {
+    bottom: 10%;
   }
 }
 
@@ -39,6 +65,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  ::slotted(div.container) {
+    bottom: 10%;
+  }
 }
 
 /* -l */
@@ -46,5 +75,8 @@
   :host aside {
     padding-left: 2rem; 
     padding-right: 2rem;
+  }
+  ::slotted(div.container) {
+    bottom: 10%;
   }
 }
