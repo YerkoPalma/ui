@@ -8,7 +8,8 @@
     <link rel="preload" as="style" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" onload="this.rel='stylesheet'" />
   </head>
   <body class="overflow-x-hidden">
-    <side-nav custom-style="/docs/side-nav.css">
+    <pacman-loader wait-for="side-nav,fs-router"></pacman-loader>
+    <side-nav style="display: none;" custom-style="/docs/side-nav.css">
       <a href="/docs/app-shell" title="App Shell">App Shell</a>
       <a href="/docs/flipper-card" title="Flipper card">Flipper card</a>
       <a href="/docs/md-view" title="Md View">Md View</a>
@@ -23,7 +24,7 @@
         </a>
       </div>
     </side-nav>
-    <fs-router class="db absolute top-0 w-75 h-100 helvetica" custom-style="/docs/fs-router.css" default-page="/docs/default.html">
+    <fs-router style="display: none;" class="db absolute top-0 w-75 h-100 helvetica" custom-style="/docs/fs-router.css" default-page="/docs/default.html">
       <h1 id="yerkopalmaui">@yerkopalma/ui</h1>
       <blockquote><p>Personal collection of ui components</p></blockquote>
       <h2 id="install">Install</h2>
