@@ -18,8 +18,8 @@ or use the tags
 if you need to load only some specific component
 
 ```html
-<script type="module" src="https://unpkg/@yerkopalma/ui/app-shell.es.js"></script>
-<script nomodule src="https://unpkg/@yerkopalma/ui/ui/app-shell.js"></script>
+<script type="module" src="https://unpkg.com/@yerkopalma/ui/src/components/app-shell.js"></script>
+<script nomodule src="https://unpkg.com/@yerkopalma/ui/ui/dist/components/app-shell.js"></script>
 ```
 
 ## Components
@@ -31,3 +31,4 @@ if you need to load only some specific component
 - [md-view](/docs/md-view.md)
 - [fs-router](/docs/fs-router.md)
 - [side-nav](/docs/side-nav.md)
+- [pacman-loader](/docs/pacman-loader.md)
