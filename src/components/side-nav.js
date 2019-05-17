@@ -35,11 +35,11 @@ export default class SideNav extends LitElement {
         top: 0;
         height: 100vh;
       }
-      ::slotted(a) {
+      ::slotted(*) {
         display: none;
       }
       @media screen and (min-width: 30em) {
-        ::slotted(a) {
+        ::slotted(*) {
           display: block;
         }
       }
@@ -61,8 +61,11 @@ export default class SideNav extends LitElement {
         e.stopPropagation()
         if (this.isOpen) {
           this.isOpen = false
-          anchors.forEach(an => {
-            an.style.display = 'none'
+          slot.assignedNodes().forEach(an => {
+            if (an.style) {
+              an.dataset.display = getComputedStyle(an).display
+              an.style.display = 'none'
+            }
           })
         }
       })
@@ -76,8 +79,11 @@ export default class SideNav extends LitElement {
     // if links are hidden, show them and grow nav
     if (getComputedStyle(anchors[0]).display === 'none') {
       this.isOpen = true
-      anchors.forEach(a => {
-        a.style.display = 'block'
+      slot.assignedNodes().forEach(a => {
+        // don't force style so classes still works
+        if (a.style) {
+          a.style.display = a.dataset.display || 'block'
+        }
       })
     }
   }

@@ -26,7 +26,7 @@
 }
 
 ::slotted(div.container) {
-  display: table;
+  display: none;
   width: 100%;
   position: absolute;
   z-index: 9;
@@ -35,19 +35,6 @@
   height: 30px;
 }
 
-/*
-::slotted(div.container svg) {
-  margin: 1rem;
-}
-
-::slotted(div.container svg:first-child) {
-  float: left;
-}
-
-::slotted(div.container svg:last-child) {
-  float: right;
-}
-*/
 /* -ns */
 @media screen and (min-width: 30em) {
   :host aside {
@@ -56,6 +43,7 @@
   }
   ::slotted(div.container) {
     bottom: 10%;
+    display: table !important;
   }
 }
 
