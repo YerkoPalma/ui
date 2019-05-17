@@ -25,11 +25,25 @@
   margin-bottom: 2rem;
 }
 
+::slotted(div.container) {
+  display: none;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  bottom: 5%;
+  left: 0;
+  height: 30px;
+}
+
 /* -ns */
 @media screen and (min-width: 30em) {
   :host aside {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+  ::slotted(div.container) {
+    bottom: 10%;
+    display: table !important;
   }
 }
 
@@ -39,6 +53,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  ::slotted(div.container) {
+    bottom: 10%;
+  }
 }
 
 /* -l */
@@ -46,5 +63,8 @@
   :host aside {
     padding-left: 2rem; 
     padding-right: 2rem;
+  }
+  ::slotted(div.container) {
+    bottom: 10%;
   }
 }
