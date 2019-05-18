@@ -19,6 +19,9 @@ export default function onload (nodes, onload) {
       fn = onload
     }
     nodesGroup = Array.from(nodes)
+    // if everything is already loade wen this scripts runs,
+    // this will ensure it stills fires its callback
+    onchange()
   }
 }
 
