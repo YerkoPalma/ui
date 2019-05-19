@@ -1,14 +1,12 @@
 /* global fetch customElements */
-import { LitElement, html } from 'https://unpkg.com/lit-element?module'
+import { html } from 'https://unpkg.com/lit-element?module'
 import { md } from '../lib/markdown.js'
+import StyledComponent from './styled.js'
 
-export default class FsRouter extends LitElement {
+export default class FsRouter extends StyledComponent {
   static get properties () {
     return {
       defaultPage: {
-        type: String
-      },
-      customStyle: {
         type: String
       },
       startPage: {
@@ -35,11 +33,6 @@ export default class FsRouter extends LitElement {
     for (let attribute of Array.from(this.attributes)) {
       if (attribute.name === 'default-page') {
         this.resolve(attribute.value).then(result => { this.defaultContent = result })
-      }
-      if (attribute.name === 'custom-style' && attribute.value.split('.').slice(-1)[0] === 'css') {
-        fetch(attribute.value)
-          .then(response => response.text())
-          .then(text => { this.customStyle = text })
       }
     }
   }

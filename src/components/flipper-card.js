@@ -1,7 +1,8 @@
 /* global customElements */
-import { LitElement, html } from 'https://unpkg.com/lit-element?module'
+import { html } from 'https://unpkg.com/lit-element?module'
+import StyledComponent from './styled.js'
 
-export default class FlipperCard extends LitElement {
+export default class FlipperCard extends StyledComponent {
   static get properties () {
     return {
       width: {
@@ -48,6 +49,7 @@ export default class FlipperCard extends LitElement {
         .flipper-container:hover .flipper, .flipper-container.hover .flipper, .flipper-container.flip .flipper {
           transform: rotateY(180deg);
         }
+        ${this.customStyle ? this.customStyle : ''}
       </style>
       <div class="flipper-container" @touchstart="${e => this.shadowRoot.querySelector('flipper-container').classList.toggle('hover')}">
         <div class="flipper">

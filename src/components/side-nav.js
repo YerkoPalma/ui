@@ -1,25 +1,8 @@
-/* global customElements fetch HTMLAnchorElement getComputedStyle */
-import { LitElement, html } from 'https://unpkg.com/lit-element?module'
+/* global customElements HTMLAnchorElement getComputedStyle */
+import { html } from 'https://unpkg.com/lit-element?module'
+import StyledComponent from './styled.js'
 
-export default class SideNav extends LitElement {
-  static get properties () {
-    return {
-      customStyle: {
-        type: String
-      }
-    }
-  }
-  constructor () {
-    super()
-    // fetch default content
-    for (let attribute of Array.from(this.attributes)) {
-      if (attribute.name === 'custom-style' && attribute.value.split('.').slice(-1)[0] === 'css') {
-        fetch(attribute.value)
-          .then(response => response.text())
-          .then(text => { this.customStyle = text })
-      }
-    }
-  }
+export default class SideNav extends StyledComponent {
   render () {
     return html`
     <style>
