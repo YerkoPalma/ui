@@ -326,6 +326,7 @@ export class CustomLexer extends Lexer {
 }
 
 export function md (src, options) {
+  options = options || {}
   const defaults = {
     gfm: true,
     tables: true,
