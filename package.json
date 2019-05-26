@@ -1,7 +1,7 @@
 {
   "name": "@yerkopalma/ui",
   "description": "Personal collection of ui components",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "files": [
     "src",
     "dist"
