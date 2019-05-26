@@ -5,6 +5,7 @@ export const { Lexer, Parser, Renderer } = markdown
 export class CustomLexer extends Lexer {
   constructor (customElements) {
     super()
+    customElements = customElements || ''
     this.rules.custom = new RegExp(`^ *<(${customElements}).*>.*<\\/\\1>`, 's')
   }
   token (src, top, bq) {
@@ -344,7 +345,7 @@ export function md (src, options) {
     renderer: new Renderer(),
     xhtml: false
   }
-  const lexer = new CustomLexer(options)
+  const lexer = new CustomLexer(options.customElements)
   const opts = Object.assign({}, defaults, options)
   return Parser.parse(lexer.lex(src, opts), opts)
 }
