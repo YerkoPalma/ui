@@ -6,7 +6,7 @@ export class CustomLexer extends Lexer {
   constructor (customElements) {
     super()
     customElements = customElements || ''
-    this.rules.custom = new RegExp(`^ *<(${customElements}).*>.*<\\/\\1>`, 's')
+    this.rules.custom = new RegExp(`^ *<(${customElements})[\\s\\S]*>[\\s\\S]*<\\/\\1>`)
   }
   token (src, top, bq) {
     src = src.replace(/^ +$/gm, '')
