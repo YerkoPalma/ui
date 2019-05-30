@@ -36,8 +36,8 @@ export default class FsRouter extends StyledComponent {
       }
     }
   }
-  firstUpdated (changedProperties) {
-    let links = document.querySelectorAll('a[href]')
+  updated (changedProperties) {
+    let links = document.querySelectorAll('a[href]:not([data-updated])')
     Array.prototype.forEach.call(links, link => {
       if (!link.target) {
         // get link url
@@ -51,6 +51,7 @@ export default class FsRouter extends StyledComponent {
               window.history.pushState(undefined, link.href, link.href)
             })
           })
+          link.setAttribute('data-updated', '')
         }
       }
     })
