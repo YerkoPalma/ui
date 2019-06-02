@@ -37,8 +37,11 @@ export default class FsRouter extends StyledComponent {
     }
   }
   updated (changedProperties) {
-    let links = document.querySelectorAll('a[href]:not([data-updated])')
-    Array.prototype.forEach.call(links, link => {
+    let links = Array.from(document.querySelectorAll('a[href]:not([data-updated])'))
+    if (this.shadowRoot) {
+      links = links.concat(Array.from(this.shadowRoot.querySelectorAll('a[href]:not([data-updated])')))
+    }
+    links.forEach(link => {
       if (!link.target) {
         // get link url
         const url = new URL(link.href)
