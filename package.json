@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.js",
-    "publish": "node scripts/publish.js"
+    "publish": "npm run build && node scripts/publish.js"
   },
   "repository": {
     "type": "git",
