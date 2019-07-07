@@ -1,8 +1,9 @@
 /* global fetch customElements */
 import { CustomLexer, Parser, Renderer, md } from '../lib/markdown.js'
-import { LitElement, html } from 'https://unpkg.com/lit-element?module'
+import { html } from 'https://unpkg.com/lit-element?module'
+import StyledComponent from './styled.js'
 
-export default class MdView extends LitElement {
+export default class MdView extends StyledComponent {
   static get properties () {
     return {
       src: {
@@ -47,7 +48,11 @@ export default class MdView extends LitElement {
     this.content = html([md(this.innerHTML)])
   }
   render () {
-    return this.content
+    return html`
+    <style>
+      ${this.customStyle ? this.customStyle : ''}
+    </style>
+    ${this.content}`
   }
   firstUpdated (changedProperties) {
     for (let key of changedProperties.keys()) {
