@@ -82,7 +82,7 @@ export default class MdView extends StyledComponent {
           padding-left: 2rem;
         }
       </style>
-      <div>
+      <div class="md-view-content">
         ${html([md(result)])}
       </div>
       `
